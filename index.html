@@ -1,1 +1,39 @@
-in
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eBook Sales</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Buy Our Amazing eBook!</h1>
+    <p>Learn everything you need to know about web development with our eBook!</p>
+    <button onclick="openPopup()">Buy Now</button>
+  </header>
+
+  <!-- Popup Modal for Order Form -->
+  <div id="popupModal" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <div id="step1" class="step">
+        <h2>Step 1: Enter Your Name</h2>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="nextStep()">Next</button>
+      </div>
+      <div id="step2" class="step" style="display: none;">
+        <h2>Step 2: Payment Information</h2>
+        <form action="payment.html">
+          <input type="text" placeholder="Credit Card Number">
+          <input type="text" placeholder="Expiration Date">
+          <input type="text" placeholder="CVV">
+          <button type="submit">Complete Purchase</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
