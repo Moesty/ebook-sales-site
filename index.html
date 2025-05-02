@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>eBook Sales</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Development of Hydraulic powered helical flight bending machine</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Buy Our Amazing eBook!</h1>
-    <p>Learn everything you need to know about web development with our eBook!</p>
-    <button onclick="openPopup()">Buy Now</button>
-  </header>
+  <main class="product-container">
+    <div class="image-section">
+      <img src="book-cover.jpg" alt="Book Cover" class="book-image" />
+    </div>
+    <div class="details-section">
+      <h1 class="book-title">Development of Hydraulic powered helical flight bending machine</h1>
+      <p class="authors"><strong>Authors:</strong> Alimeke, B.N.G, Etimuan M., Olorio K, S.M., and John, J.P.</p>
+      <p class="price"><strong>Price:</strong> ₦1000</p>
+      <p class="description">
+        Learn the principles and real-world development of a hydraulic-powered helical flight bending machine with this in-depth research and practical guide.
+      </p>
+      <button onclick="openPopup()">Buy Now</button>
+    </div>
+  </main>
 
   <!-- Popup Modal for Order Form -->
   <div id="popupModal" class="popup">
@@ -19,15 +28,15 @@
       <span class="close-btn" onclick="closePopup()">&times;</span>
       <div id="step1" class="step">
         <h2>Step 1: Enter Your Name</h2>
-        <input type="text" id="nameInput" placeholder="Enter your name">
+        <input type="text" id="nameInput" placeholder="Enter your name" />
         <button onclick="nextStep()">Next</button>
       </div>
       <div id="step2" class="step" style="display: none;">
         <h2>Step 2: Payment Information</h2>
         <form action="payment.html">
-          <input type="text" placeholder="Credit Card Number">
-          <input type="text" placeholder="Expiration Date">
-          <input type="text" placeholder="CVV">
+          <input type="text" placeholder="Credit Card Number" />
+          <input type="text" placeholder="Expiration Date" />
+          <input type="text" placeholder="CVV" />
           <button type="submit">Complete Purchase</button>
         </form>
       </div>
