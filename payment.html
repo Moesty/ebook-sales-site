@@ -1,16 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Order Confirmation</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment - eBook</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Thank You for Your Purchase!</h1>
-    <p>Your eBook is on its way! Check your email for a download link.</p>
+
+  <!-- Header -->
+  <header class="bg-black text-white d-flex align-items-center justify-content-center" style="height: 10em;">
+    <h1 class="text-center">Complete Your Purchase</h1>
   </header>
+
+  <!-- Main Container -->
+  <main class="container my-5 d-flex justify-content-center">
+    <div class="row rounded shadow p-4 bg-white" style="max-width: 600px; width: 100%;">
+      <!-- Step 1 -->
+      <div id="formStep1">
+        <h3 class="mb-3">Step 1: Your Details</h3>
+        <form>
+          <div class="mb-3">
+            <label for="firstName" class="form-label">First Name *</label>
+            <input type="text" class="form-control" id="firstName" required>
+          </div>
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name *</label>
+            <input type="text" class="form-control" id="lastName" required>
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number (optional)</label>
+            <input type="text" class="form-control" id="phone">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email *</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <button type="button" class="btn btn-primary w-100" onclick="goToStep2()">Next</button>
+        </form>
+      </div>
+
+      <!-- Step 2 -->
+      <div id="formStep2" style="display: none;">
+        <h3 class="mb-3">Step 2: Payment Instructions</h3>
+        <p><strong>Bank Name:</strong> UBA</p>
+        <p><strong>Account Name:</strong> Mark Ehimuan</p>
+        <p><strong>Account Number:</strong> 2066795894</p>
+        <p>Please make a transfer of <strong>₦1000</strong> to the account above.</p>
+        <button class="btn btn-success w-100" onclick="showSuccess()">I’ve Sent the Money</button>
+      </div>
+
+      <!-- Step 3 -->
+      <div id="successMessage" style="display: none;">
+        <h3 class="text-success">Thank You!</h3>
+        <p>Your eBook is on its way.</p>
+        <p>Check your email for a download link.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white text-center py-4">
+    <p>&copy; 2025 eBook Sales. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function goToStep2() {
+      const first = document.getElementById('firstName').value.trim();
+      const last = document.getElementById('lastName').value.trim();
+      const email = document.getElementById('email').value.trim();
+
+      if (!first || !last || !email) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+
+      document.getElementById('formStep1').style.display = 'none';
+      document.getElementById('formStep2').style.display = 'block';
+    }
+
+    function showSuccess() {
+      document.getElementById('formStep2').style.display = 'none';
+      document.getElementById('successMessage').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
-
